@@ -7,8 +7,8 @@
 //Lister le contenu de la table movies
 
 //1° - Connexion à la BDD
-$base = new PDO('mysql:host=localhost; dbname=id20205717_database_movies', 'id20205717_najd', 'QEyHS[))ia1DAg1X
-');
+$base = new PDO('mysql:host=localhost; dbname=id20205717_database_movies', 'id20205717_najd', 'D9E2OU{VK>44rv^Z');
+
 $base->exec("SET CHARACTER SET utf8");
 
 //2° - Préparation de requette et execution
