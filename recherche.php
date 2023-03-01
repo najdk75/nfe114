@@ -15,8 +15,8 @@ $base->exec("SET CHARACTER SET utf8");
 $retour = $base->query('SELECT * FROM movies WHERE annee='.$ANNEE.';');
 
 // Affichage des résultats
-foreach ($resultat as $retour) {
-    echo $resultat['titre'] . "<br>";
+foreach ($retour as $film) {
+    echo $film['titre'] . "<br>";
 }
 
 
