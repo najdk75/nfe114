@@ -15,8 +15,6 @@ $sql = "SELECT title FROM movies WHERE annee='" . $ANNEE . "'";
 //2° - Préparation de requette et execution
 $retour = $base->query('SELECT * FROM movies WHERE annee='.$ANNEE.';');
 
-$resultats = $base->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-
 // Affichage des résultats
 foreach ($resultat as $retour) {
     echo $resultat['titre'] . "<br>";
