@@ -9,15 +9,15 @@ $ANNEE = $_GET['annee'];
 
 
 //1° - Connexion à la BDD
-$base = new PDO('mysql:host=localhost; dbname=id20205717_database_movies', 'id20205717_najd', 'QEyHS[))ia1DAg1X');
+$base = new PDO('mysql:host=localhost; dbname=id20205717_database_movies', 'id20205717_najd', 'M<oTL%B!jA2X\FaT');
 $base->exec("SET CHARACTER SET utf8");
 //2° - Préparation de requette et execution
 $retour = $base->query('SELECT * FROM movies WHERE annee='.$ANNEE);
 
 // Affichage des résultats
-foreach ($retour as $film) {
-    echo $film . "<br>";
-}
+while ($data = $retour->fetch()){
+    echo $data['id']." ".$data['titre']." ".$data['genre']." ".$data['annee']."</br>";
+    }
 
 
 ?>
