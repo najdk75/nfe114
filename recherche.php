@@ -12,7 +12,7 @@ $ANNEE = $_GET['annee'];
 $base = new PDO('mysql:host=localhost; dbname=id20205717_database_movies', 'id20205717_najd', 'QEyHS[))ia1DAg1X');
 $base->exec("SET CHARACTER SET utf8");
 //2° - Préparation de requette et execution
-$retour = $base->query('SELECT * FROM movies WHERE annee='.$ANNEE.';');
+$retour = $base->query('SELECT * FROM movies WHERE annee='.$ANNEE);
 
 // Affichage des résultats
 foreach ($retour as $film) {
