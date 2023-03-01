@@ -16,7 +16,7 @@ $retour = $base->query('SELECT * FROM movies WHERE annee='.$ANNEE.';');
 
 // Affichage des résultats
 foreach ($retour as $film) {
-    echo $film['titre'] . "<br>";
+    echo $film . "<br>";
 }
 
 
