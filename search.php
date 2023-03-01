@@ -15,7 +15,8 @@ while ($data = $retour->fetch()){
     echo $data['id']." ".$data['titre']." ".$data['genre']." ".$data['annee']."</br>";
     }
     
-
 ?>
 </body>
 </html>
+
+
