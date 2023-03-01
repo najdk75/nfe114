@@ -13,13 +13,13 @@ $base = new PDO('mysql:host=localhost; dbname=id20205717_database_movies', 'id20
 $base->exec("SET CHARACTER SET utf8");
 $sql = "SELECT title FROM movies WHERE annee='" . $ANNEE . "'";
 //2° - Préparation de requette et execution
-$retour = $base->query($sql);
+$retour = $base->query('SELECT * FROM movies WHERE annee='.$ANNEE.';');
 
 $resultats = $base->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 // Affichage des résultats
-foreach ($resultats as $resultat) {
-    echo $resultat['title'] . "<br>";
+foreach ($resultat as $retour) {
+    echo $resultat['titre'] . "<br>";
 }
 
 
