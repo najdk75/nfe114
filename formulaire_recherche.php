@@ -20,7 +20,7 @@
     
     ?>
     </select>
-    <p><input type="submit"/>Envoyer</p>
+    <p><input type="submit"/>ENVOYER</p>
 
 
 </form>
