@@ -1,4 +1,4 @@
-<p>ANNEE ? <SELECT name="annee">
+<p>Annee ? <SELECT name="annee">
 
     <?php
     
