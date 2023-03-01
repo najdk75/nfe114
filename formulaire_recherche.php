@@ -1,4 +1,8 @@
-<p>Annee ? <SELECT name="annee">
+<html>
+
+    <p>Annee ? 
+    <form action="search.php" method="GET">    
+    <select name="annee">
 
     <?php
     
@@ -15,5 +19,11 @@
     }
     
     ?>
-    </SELECT>
+    </select>
+    <p><input type="submit"/>Envoyer</p>
+
+
+</form>
     </p>
+
+</html>
