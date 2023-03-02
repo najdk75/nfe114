@@ -28,7 +28,7 @@ function envoyer(){
     requete_pour_carte_php.open("GET", url, false);
     requete_pour_carte_php.send(null);
 
-    var resultat = requete_pour_carte_php.responseText;
+    var resultat = JSON.parse(requete_pour_carte_php.responseText);
     console.log(resultat);
     document.getElementById("result").innerHTML = resultat;
     
