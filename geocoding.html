@@ -14,7 +14,7 @@ function envoyer(){
 	req.open("GET","https://api-adresse.data.gouv.fr/search/?q="+rue+"&postcode="+ville,false); 
     //Envois de l'information au serveur
 	req.send(null); 
-    //Reception et affichage du résultat
+    //Reception et affichage du résultatt
 	var geocodeObjet = JSON.parse(req.responseText);
     
     //Filtre pour récuppérer uniquement les valeurs GPS de l'adresses
