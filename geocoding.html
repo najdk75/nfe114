@@ -24,7 +24,7 @@ function envoyer(){
     document.getElementById('result').innerHTML="Long "+long+"</br>Lat "+lat;
 
     var requete_pour_carte_php = new XMLHttpRequest();
-    requete_pour_carte_php.open("GET", "lacarte.php?longitude="+long+"&latitude="+lat, false);
+    requete_pour_carte_php.open("GET", "lacarte.php?longitude="+long+"&latitude="+lat, true);
     requete_pour_carte_php.send();
     
 }    
