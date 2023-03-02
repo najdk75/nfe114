@@ -26,8 +26,8 @@ function envoyer(){
     var url = "/lacarte.php?longitude=" + long + "&latitude=" + lat;
     var req_to_map = new XMLHttpRequest();
 
-    req.open("GET",url,false);
-    req.send();
+    req_to_map.open("GET",url,false);
+    req_to_map.send();
 
     var resultat = req_to_map.responseText;
     document.getElementById("result").innerHTML = resultat;
