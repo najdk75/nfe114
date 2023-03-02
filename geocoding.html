@@ -29,6 +29,7 @@ function envoyer(){
     requete_pour_carte_php.send(null);
 
     var resultat = requete_pour_carte_php.responseText;
+    console.log(resultat);
     document.getElementById("result").innerHTML = resultat;
     
    
