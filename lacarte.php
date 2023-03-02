@@ -7,8 +7,8 @@
     <script src="https://openlayers.org/api/OpenLayers.js"></script>
 
     <script>
-      var longitude = <?php echo $_GET['longitude'] ?>
-      var latitude = <?php echo $_GET['latitude'] ?>
+      var longitude = "<?php echo $_GET['longitude'] ?>"
+      var latitude = "<?php echo $_GET['latitude'] ?>"
       console.log(latitude);
       console.log(longitude);
       map = new OpenLayers.Map("mapdiv");
