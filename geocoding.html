@@ -25,7 +25,7 @@ function envoyer(){
     var url = "./lacarte.php?longitude="+long+"&latitude="+lat;
     console.log(url);
     requete_pour_carte_php.open("GET", url);
-    requete_pour_carte_php.send();
+    requete_pour_carte_php.send(null);
     
 }    
 </script>
