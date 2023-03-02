@@ -17,7 +17,7 @@ function envoyer(){
     //Reception et affichage du résultat
 	var geocodeObjet = JSON.parse(req.responseText);
     
-    //Filtre pour récuppérer uniquement les valeurs GPS de l'adresse
+    //Filtre pour récuppérer uniquement les valeurs GPS de l'adresses
     var long = geocodeObjet.features[0].geometry.coordinates[0];
     var lat = geocodeObjet.features[0].geometry.coordinates[1];
 
