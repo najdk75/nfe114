@@ -9,6 +9,8 @@
     <script>
       var longitude = <?php echo $_GET['longitude'] ?>
       var latitude = <?php echo $_GET['latitude'] ?>
+      console.log(latitude);
+      console.log(longitude);
       map = new OpenLayers.Map("mapdiv");
       map.addLayer(new OpenLayers.Layer.OSM());
         
