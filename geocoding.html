@@ -21,10 +21,8 @@ function envoyer(){
     var long = geocodeObjet.features[0].geometry.coordinates[0];
     var lat = geocodeObjet.features[0].geometry.coordinates[1];
 
-    document.getElementById('result').innerHTML="Long "+long+"</br>Lat "+lat;
-
     var requete_pour_carte_php = new XMLHttpRequest();
-    requete_pour_carte_php.open("GET", "lacarte.php?longitude="+long+"&latitude="+lat, true);
+    requete_pour_carte_php.open("GET", "./lacarte.php?longitude="+long+"&latitude="+lat, true);
     requete_pour_carte_php.send();
     
 }    
