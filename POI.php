@@ -5,7 +5,7 @@ echo "lat\tlon\ttitle\tdescription\ticon\ticonSize\ticonOffset\n";
 echo "43.296482\t5.36978\tMoi\tMa Position\tperson.png\t24,24\t0,-24\n";
 
 
-//1° - Connexion à la BDD.
+//1° - Connexion à la BDD...
 $base = new PDO('mysql:host=localhost; dbname=id20205717_open_street_map', 'id20205717_najd2', 'mhV@4(qdgb()k+5G');
 $base->exec("SET CHARACTER SET utf8");
 
