@@ -22,7 +22,7 @@ LIMIT 10;
 
 //Boucle For
 while ($data = $retour->fetch()){
-    echo $data['equi_lat']."\t".$data['equi_long']."\t$data[equi_libelle]\t".(isset($data['equi_bat']) ? $data['equi_bat'] : 'Informations non renseignées')."\tpoint_of_interest.png\t24,24\t0,-24\n";
+    echo $data['equi_lat']."\t".$data['equi_long']."\t$data[equi_libelle]\t".(!empty($data['equi_bat']) ? $data['equi_bat'] : 'Informations non renseignées')."\tpoint_of_interest.png\t24,24\t0,-24\n";
 
 }
 
