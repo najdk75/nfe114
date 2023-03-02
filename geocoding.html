@@ -22,6 +22,12 @@ function envoyer(){
     var lat = geocodeObjet.features[0].geometry.coordinates[1];
 
     var requete_pour_carte_php = new XMLHttpRequest();
+    requete_pour_carte_php.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    // Afficher le résultat de la requête dans la console
+    console.log(this.responseText);
+  }
+};
     requete_pour_carte_php.open("GET", "./lacarte.php?longitude="+long+"&latitude="+lat, true);
     requete_pour_carte_php.send();
     
