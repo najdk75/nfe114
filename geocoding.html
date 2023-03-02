@@ -24,7 +24,13 @@ function envoyer(){
     var lat = geocodeObjet.features[0].geometry.coordinates[1];
 
     var url = "/lacarte.php?longitude=" + long + "&latitude=" + lat;
-    document.location.href=url;
+    var req_to_map = new XMLHttpRequest();
+
+    req.open("GET",url,false);
+    req.send();
+
+    var resultat = req_to_map.responseText;
+    document.getElementById("result").innerHTML = resultat;
 
     
    
@@ -37,7 +43,7 @@ function envoyer(){
 <p>Adresse <input id="rue"/></p>
 <p>Code postal <input id="code"/></p>
 <button onclick="envoyer()">Envoyer</button>
-<p id="result"></p>
+<div id="result"></p>
 
 </body>
 </html>
