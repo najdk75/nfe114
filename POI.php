@@ -22,6 +22,6 @@ LIMIT 10;
 while ($data = $retour->fetch()){
 echo $data['equi_lat']."\t".$data['equi_long']."\tMoi\tMa Position\tOl_icon_red_example.png\t24,24\t0,-24\n";
 }
-echo "2.35576300\t48.84205300\tMuséum national d'Histoire naturelle\tmuseum.png\t24,24\t0,-24\n";
+echo "2.35576300\t48.84205300\tMuséum national d'Histoire naturelle\tPosition\tmuseum.png\t24,24\t0,-24\n";
 
 ?>
