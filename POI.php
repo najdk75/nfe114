@@ -22,7 +22,7 @@ LIMIT 10;
 
 //Boucle For
 while ($data = $retour->fetch()){
-    error_log($data['equi_id'])
+    error_log($data['equi_id']);
     echo $data['equi_lat']."\t".$data['equi_long']."\t$data[equi_libelle]\t".(isset($data['equi_bat']) ? $data['equi_bat'] : ' ')."\tpoint_of_interest.png\t24,24\t0,-24\n";
 
 }
