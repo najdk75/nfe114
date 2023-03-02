@@ -13,7 +13,7 @@ $base = new PDO('mysql:host=localhost; dbname=id20205717_open_street_map', 'id20
 $base->exec("SET CHARACTER SET utf8");
 
 //2° - Préparation de requette et execution
-$retour = $base->query('SELECT *, get_distance_metres(\'48.858205\', \'2.294359\', equi_lat, equi_long) 
+$retour = $base->query('SELECT *, get_distance_metres('$LATITUDE', '$LONGITUDE', equi_lat, equi_long) 
 AS proximite 
 FROM equipement 
 HAVING proximite < 1000 ORDER BY proximite ASC
@@ -22,7 +22,7 @@ LIMIT 10;
 
 //Boucle For
 while ($data = $retour->fetch()){
-echo $data['equi_lat']."\t".$data['equi_long']."\tMoi\tMa Position\tOl_icon_red_example.png\t24,24\t0,-24\n";
+echo $data['equi_lat']."\t".$data['equi_long']."\tMoi\tMa Position\tpoint_of_interest.png\t24,24\t0,-24\n";
 }
 
 ?>
