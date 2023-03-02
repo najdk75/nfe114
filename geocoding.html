@@ -3,37 +3,41 @@
 <html>
 <head>
 <script>
-function envoyer(){
-    //Récuppérat"ion des valeurs saisies pas l'utilisateurr
-	var rue = document.getElementById('rue').value;
+function envoyer() {
+    //Récupération des valeurs saisies pas l'utilisateur
+    var rue = document.getElementById('rue').value;
     var ville = document.getElementById('code').value;
     
-	//API issu de https://adresse.data.gouv.fr/api-doc/adresse
-	
-	//Création de l'object Ajax
-	var req= new XMLHttpRequest();
+    //API issu de https://adresse.data.gouv.fr/api-doc/adresse
+    
+    //Création de l'object Ajax
+    var req = new XMLHttpRequest();
     //Préparation de requette
-	req.open("GET","https://api-adresse.data.gouv.fr/search/?q="+rue+"&postcode="+ville,false); 
-    //Envois de l'information au serveur
-	req.send(null); 
-    //Reception et affichage du résultatt
-	var geocodeObjet = JSON.parse(req.responseText);
+    req.open("GET", "https://api-adresse.data.gouv.fr/search/?q=" + rue + "&postcode=" + ville, true); 
+    //Définition du rappel pour traiter la réponse
+    req.onreadystatechange = function() {
+        if (req.readyState == 4 && req.status == 200) {
+            var geocodeObjet = JSON.parse(req.responseText);
+            //Filtre pour récupérer uniquement les valeurs GPS de l'adresse
+            var long = geocodeObjet.features[0].geometry.coordinates[0];
+            var lat = geocodeObjet.features[0].geometry.coordinates[1];
     
-    //Filtre pour récuppérer uniquement les valeurs GPS de l'adresses
-    var long = geocodeObjet.features[0].geometry.coordinates[0];
-    var lat = geocodeObjet.features[0].geometry.coordinates[1];
-
-    var requete_pour_carte_php = new XMLHttpRequest();
-    var url = "/lacarte.php?longitude=" + long + "&latitude=" + lat;
-    requete_pour_carte_php.open("GET", url, false);
-    requete_pour_carte_php.send(null);
-
-    var resultat = requete_pour_carte_php.responseText
-    console.log(resultat);
-    document.getElementById("result").innerHTML = resultat;
-    
-   
-}    
+            var requete_pour_carte_php = new XMLHttpRequest();
+            var url = "/lacarte.php?longitude=" + long + "&latitude=" + lat;
+            requete_pour_carte_php.open("GET", url, true);
+            //Définition du rappel pour traiter la réponse
+            requete_pour_carte_php.onreadystatechange = function() {
+                if (requete_pour_carte_php.readyState == 4 && requete_pour_carte_php.status == 200) {
+                    var resultat = requete_pour_carte_php.responseText;
+                    document.getElementById("result").innerHTML = resultat;
+                }
+            };
+            requete_pour_carte_php.send(null);
+        }
+    };
+    //Envoi de l'information au serveur
+    req.send(null);
+}   
 </script>
 
 </head>    
