@@ -22,11 +22,16 @@ function envoyer(){
     var lat = geocodeObjet.features[0].geometry.coordinates[1];
 
     document.getElementById('result').innerHTML="Long "+long+"</br>Lat "+lat;
+
+    var requete_pour_carte_php = new XMLHttpRequest();
+    xhttp.open("GET", "lacarte.php?longitude="+long+"&latitude="+lat, false);
+    xhttp.send();
     
 }    
 </script>
 
 </head>    
+
 <body>
 <p>Adresse <input id="rue"/></p>
 <p>Code postal <input id="code"/></p>
