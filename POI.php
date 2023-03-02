@@ -17,7 +17,7 @@ $retour = $base->query("SELECT *, get_distance_metres('$LATITUDE', '$LONGITUDE',
 AS proximite 
 FROM equipement 
 HAVING proximite < 1000 ORDER BY proximite ASC
-LIMIT 100;
+LIMIT 10;
 ");
 
 //Boucle For
