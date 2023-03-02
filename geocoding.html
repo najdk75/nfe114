@@ -23,14 +23,9 @@ function envoyer(){
     var long = geocodeObjet.features[0].geometry.coordinates[0];
     var lat = geocodeObjet.features[0].geometry.coordinates[1];
 
-    var requete_pour_carte_php = new XMLHttpRequest();
     var url = "/lacarte.php?longitude=" + long + "&latitude=" + lat;
-    requete_pour_carte_php.open("GET", url, false);
-    requete_pour_carte_php.send(null);
+    document.location.href=url;
 
-    var resultat = requete_pour_carte_php.responseText
-    console.log(resultat);
-    document.getElementById("result").innerHTML = resultat;
     
    
 }    
