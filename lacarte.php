@@ -13,7 +13,7 @@
       map.addLayer(new OpenLayers.Layer.OSM());
         
       var pois = new OpenLayers.Layer.Text( "My Points",
-                      { location:"./POI.php",
+                      { location:"./POI.php?longitude=" + longitude + "&latitude=" + latitude,
                         projection: map.displayProjection
                       });
       map.addLayer(pois);

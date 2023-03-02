@@ -1,8 +1,11 @@
 <?php
 
+
+$LONGITUDE = $_GET['longitude'];
+$LATITUDE = $_GET['latitude'];
 //C'est le POI de l'utilisateurr
 echo "lat\tlon\ttitle\tdescription\ticon\ticonSize\ticonOffset\n";
-echo "43.296482\t5.36978\tMoi\tMa Position\tperson.png\t24,24\t0,-24\n";
+echo "$LATITUDE\t$LONGITUDE\tMoi\tMa Position\tperson.png\t24,24\t0,-24\n";
 
 
 //1° - Connexion à la BDD...
