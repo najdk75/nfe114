@@ -26,7 +26,7 @@ function envoyer(){
     console.log(url);
     console.log("Avant open :",requete_pour_carte_php.readyState);
     requete_pour_carte_php.open("GET", url,true);
-    consle.log("Après open :",requete_pour_carte_php.readyState);
+    console.log("Après open :",requete_pour_carte_php.readyState);
 
     requete_pour_carte_php.onreadystatechange = function () {
         console.log("Executed!",requete_pour_carte_php.readyState);
