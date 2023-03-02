@@ -28,8 +28,8 @@ function envoyer(){
     requete_pour_carte_php.open("GET", url, false);
     requete_pour_carte_php.send(null);
 
-    var resultat = JSON.parse(requete_pour_carte_php.responseText);
-    console.log(resultat);
+    var resultat = requete_pour_carte_php.responseText
+    console.log(resultat.length);
     document.getElementById("result").innerHTML = resultat;
     
    
