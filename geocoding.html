@@ -22,16 +22,17 @@ function envoyer(){
     var lat = geocodeObjet.features[0].geometry.coordinates[1];
 
     var requete_pour_carte_php = new XMLHttpRequest();
-    var url = "./lacarte.php?longitude="+long+"&latitude="+lat;
-    console.log(url);
-    console.log("Avant open :",requete_pour_carte_php.readyState);
-    requete_pour_carte_php.open("GET", url,true);
-    console.log("Après open :",requete_pour_carte_php.readyState);
+var url = "./lacarte.php?longitude=" + long + "&latitude=" + lat;
 
-    requete_pour_carte_php.onreadystatechange = function () {
-        console.log("Executed!",requete_pour_carte_php.readyState);
-    };
-    requete_pour_carte_php.send(null);
+requete_pour_carte_php.onreadystatechange = function () {
+    if (requete_pour_carte_php.readyState === 4 && requete_pour_carte_php.status === 200) {
+        var resultat = requete_pour_carte_php.responseText;
+        document.getElementById("result").innerHTML = resultat;
+    }
+};
+
+requete_pour_carte_php.open("GET", url, true);
+requete_pour_carte_php.send(null);
     
 }    
 </script>
