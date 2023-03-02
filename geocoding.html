@@ -24,7 +24,10 @@ function envoyer(){
     var requete_pour_carte_php = new XMLHttpRequest();
     var url = "./lacarte.php?longitude="+long+"&latitude="+lat;
     console.log(url);
+    consle.log("Avant open :",requete_pour_carte_php.readyState);
     requete_pour_carte_php.open("GET", url,true);
+    consle.log("Après open :",requete_pour_carte_php.readyState);
+
     requete_pour_carte_php.onreadystatechange = function () {
         console.log("Executed!",requete_pour_carte_php.readyState);
     };
