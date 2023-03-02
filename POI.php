@@ -2,8 +2,7 @@
 
 //C'est le POI de l'utilisateurr
 echo "lat\tlon\ttitle\tdescription\ticon\ticonSize\ticonOffset\n";
-echo "48.858205\t2.294359\tMoi\tMa Position\tOl_icon_blue_example.png\t24,24\t0,-24\n";
-echo "2.35576300\t48.84205300\Museum d'Histoire Naturelle de Paris\tMa Position\tOl_icon_blue_example.png\t24,24\t0,-24\n";
+echo "43.296482\t5.36978\tMoi\tMa Position\tOl_icon_blue_example.png\t24,24\t0,-24\n";
 
 
 //1° - Connexion à la BDD.
