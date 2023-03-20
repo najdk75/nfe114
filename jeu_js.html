@@ -42,23 +42,22 @@ function bouger(){
 
     }
 
-    if (y_cord < 0){
-        return rayon;
+    if (ennemy_ballY < 0){
+        ennemy_ballY = rayon;
     } 
-    if (y_cord > height){
-        return height - rayon;
+    if (ennemy_ballY > height){
+        ennemy_ballY =  height - rayon;
     }
     
     ennemy_ballX-= 15;
         if (ennemy_ballX <= 15) {
             ennemy_ballX = width - rayon;
         }
-        document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
-        document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
+    document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
+    document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
     
 	
 }
-
 
 
 function deplacement(evt) {
