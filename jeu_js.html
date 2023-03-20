@@ -20,7 +20,7 @@ function principale(){
    
 	//Ajout d'un écouteur sur les touches
 	window.addEventListener('keydown', deplacement, true);
-     //Lance la fonction bouger() à interval de "speedd"
+     //Lance la foncction bouger() à interval de "speedd"
 	enemy = setInterval(bouger, speed);
     
 	
@@ -31,13 +31,13 @@ function bouger(){
 
 	//Codee à créer pour faire bouger la boule enemy
     var ballX = parseInt(document.getElementById('enemy_ball').getAttribute("cx"));
-    while (true) {
+    
         ballX-= 15;
         if (ballX <= 15) {
             ballX = width - rayon;
         }
         document.getElementById('ennemy_ball').setAttribute("cx",ballX);
-    }
+    
 	
 }
 
