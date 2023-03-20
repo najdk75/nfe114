@@ -14,7 +14,7 @@ var speed = 500;
 var width = 900;
 var height = 400;
 var rayon = 15;
-var velocity = 15;
+var velocity = 30;
 
 function principale(){
 
@@ -58,7 +58,7 @@ function bouger(){
     ennemy_ballX-= velocity;
         if (ennemy_ballX <= 15) {
             ennemy_ballX = width - rayon;
-            speed *= 2;
+            speed /= 2;
         }
     document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
