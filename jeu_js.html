@@ -22,6 +22,7 @@ function principale(){
 	//Ajout d'un écouteur sur les touches
 	window.addEventListener('keydown', deplacement, true);
      //Lance la foncction bouger() à interval de "speedd"
+    console.log(speed);
 	enemy = setInterval(bouger, speed);
     
 	
