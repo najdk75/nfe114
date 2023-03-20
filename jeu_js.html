@@ -18,6 +18,13 @@ var rayon = 15;
 var velocity = 15;
 var manche = 1;
 
+// position
+var ballX = parseInt(document.getElementById('ball').getAttribute("cx"));
+var ballY = parseInt(document.getElementById('ball').getAttribute("cy"));
+
+var ennemy_ballX = parseInt(document.getElementById('ennemy_ball').getAttribute("cx"));
+var ennemy_ballY = parseInt(document.getElementById('ennemy_ball').getAttribute("cy"));
+
 function principale(){
 
 	//Ajout d'un écouteur sur les touches
@@ -32,14 +39,8 @@ function principale(){
 function bouger(){
     document.getElementById("manche").innerText = "Manche : " + manche;
 
-    var ballX = parseInt(document.getElementById('ball').getAttribute("cx"));
-    var ballY = parseInt(document.getElementById('ball').getAttribute("cy"));
+	//Code à créeer pour faire bouger la boule enemy
 
-	//Codde à créeer pour faire bouger la boule enemy
-    var ennemy_ballX = parseInt(document.getElementById('ennemy_ball').getAttribute("cx"));
-    var ennemy_ballY = parseInt(document.getElementById('ennemy_ball').getAttribute("cy"));
-
-    
     if (ballY > ennemy_ballY) {
         ennemy_ballY += velocity;
     } else if (ballY < ennemy_ballY) {
@@ -57,11 +58,11 @@ function bouger(){
     if (Math.abs(ballY - ennemy_ballY) < rayon) {
         ennemy_ballY = ballY;
     }
-    
+    // manche gagnée, on augmente la vitesse de rafraichissement
     ennemy_ballX-= velocity;
         if (ennemy_ballX <= 15) {
             ennemy_ballX = width - rayon;
-            speed /= 2;
+            speed /= 1,6;
             clearInterval(enemy);
             enemy = setInterval(bouger,speed);
             manche +=1;
@@ -69,29 +70,41 @@ function bouger(){
     document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
     
+    // si collision alors on a perdu
 	if (Math.abs(ballY - ennemy_ballY) < rayon && Math.abs(ballX - ennemy_ballX) < rayon) {
         alert("Vous avez perdu!");
-        manche = 0;
-        speed = start_speed;
-        ennemy_ballX = width - rayon;
-        ennemy_ballY = height / 2;
-        clearInterval(enemy);
+        reset();
         enemy = setInterval(bouger,speed);
-
-        document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
-        document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
 
     }
 
     
 }
+/*
+    On remet manche à zéro.
+    On réinitialise la vitesse.
+    On repositionne les balles aux positions de départ.
+*/
+function reset(){
+        manche = 0;
+        speed = start_speed;
+        clearInterval(enemy);
 
+        ballX = width/2;
+        ballY = height/2;
+        ennemy_ballX = width - rayon;
+        ennemy_ballY = height / 2;
+        
+        document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
+        document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
+        document.getElementById('ball').setAttribute("cx", ballX);
+        document.getElementById('ball').setAttribute("cy",ballY);
+
+}
 
 
 
 function deplacement(evt) {
-		   var ballX = parseInt(document.getElementById('ball').getAttribute("cx"));
-		   var ballY = parseInt(document.getElementById('ball').getAttribute("cy"));
            switch (evt.keyCode) {
                 // Gauche 
                 case 37:
