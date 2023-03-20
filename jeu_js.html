@@ -35,12 +35,8 @@ function bouger(){
     var ennemy_ballX = parseInt(document.getElementById('ennemy_ball').getAttribute("cx"));
     var ennemy_ballY = parseInt(document.getElementById('ennemy_ball').getAttribute("cy"));
 
-    if (ballY > ennemy_ballY) {
-        ennemy_ballY += 15;
-    } else if (ballY < ennemy_ballY) {
-        ennemy_ballY -= 15;
-
-    }
+    ennemy_ballY += (ballY > ennemy_ballY) ? 15 : -15;
+  
     
     if (ennemy_ballY < 0){
         ennemy_ballY = rayon;
