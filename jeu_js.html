@@ -11,6 +11,9 @@ h1{position:absolute;top:-7px; left:320px; z-index:2;}
 <script>
 //var globale.
 var speed = 500;
+var width = 900;
+var height = 400;
+var rayon = 15;
 
 function principale(){
 	//Ajout d'un écouteur sur les touches
@@ -43,14 +46,22 @@ function deplacement(evt) {
                     ballX += 15;
                     if (ballX > 885) {ballX = 885;}
                     document.getElementById('ball').setAttribute("cx",ballX);
-
+                    break;
 
 				// Haut 
                 case 38:
+                    ballY -= 15;
+                    if (ballY < 15){ballY = 15;}
+                    document.getElementById('ball').setAttribute("cy",ballY);
+                    break;
 
 
 				// Bas 
                 case 40:
+                ballY += 15;
+                    if (ballY > 385){ballY = 385;}
+                    document.getElementById('ball').setAttribute("cy",ballY);
+                    break;
 
 
             }
