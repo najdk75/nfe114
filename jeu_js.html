@@ -30,7 +30,7 @@ function principale(){
 }
 
 function bouger(){
-    document.getElementById("manche").innerText = manche;
+    document.getElementById("manche").innerText = "Manche : " + manche;
 
     var ballX = parseInt(document.getElementById('ball').getAttribute("cx"));
     var ballY = parseInt(document.getElementById('ball').getAttribute("cy"));
@@ -130,7 +130,6 @@ function deplacement(evt) {
 </script>
 </head>
 <body onload="principale()">
-	<h1>Jeux Javascript</h1><br>
     <h1 id="manche"></h1>
 	<svg id="zonedejeux">
 	<circle cx="450" cy="200" r="15" fill="tomato" id="ball" />
