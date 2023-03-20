@@ -31,14 +31,17 @@ function bouger(){
     var ballX = parseInt(document.getElementById('ball').getAttribute("cx"));
     var ballY = parseInt(document.getElementById('ball').getAttribute("cy"));
 
-	//Codee à créer pour faire bouger la boule enemy
+	//Codee à créeer pour faire bouger la boule enemy
     var ennemy_ballX = parseInt(document.getElementById('ennemy_ball').getAttribute("cx"));
     var ennemy_ballY = parseInt(document.getElementById('ennemy_ball').getAttribute("cy"));
 
     if (ballY > ennemy_ballY) {
         ennemy_ballY += 15;
+        ennemy_ballY = set_limit_y(ennemy_ballY);
     } else if (ballY < ennemy_ballY) {
         ennemy_ballY -= 15;
+        ennemy_ballY = set_limit_y(ennemy_ballY);
+
     }
     
     ennemy_ballX-= 15;
@@ -49,6 +52,16 @@ function bouger(){
         document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
     
 	
+}
+
+function set_limit_y(x_coord, y_coord) {
+    if (y_cord < 0){
+        return rayon;
+    } 
+
+    if (y_cord > height){
+        return height - rayon;
+    }
 }
 
 
