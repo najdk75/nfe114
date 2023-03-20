@@ -37,11 +37,16 @@ function bouger(){
 
     if (ballY > ennemy_ballY) {
         ennemy_ballY += 15;
-        ennemy_ballY = set_limit_y(ennemy_ballY);
     } else if (ballY < ennemy_ballY) {
         ennemy_ballY -= 15;
-        ennemy_ballY = set_limit_y(ennemy_ballY);
 
+    }
+
+    if (y_cord < 0){
+        return rayon;
+    } 
+    if (y_cord > height){
+        return height - rayon;
     }
     
     ennemy_ballX-= 15;
@@ -54,14 +59,6 @@ function bouger(){
 	
 }
 
-function set_limit_y(y_coord) {
-    if (y_cord < 0){
-        return rayon;
-    } 
-    if (y_cord > height){
-        return height - rayon;
-    }
-}
 
 
 function deplacement(evt) {
