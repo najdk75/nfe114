@@ -58,7 +58,7 @@ function bouger(){
     ennemy_ballX-= velocity;
         if (ennemy_ballX <= 15) {
             ennemy_ballX = width - rayon;
-            velocity*= 1.40;
+            speed *= 2;
         }
     document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
