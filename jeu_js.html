@@ -37,29 +37,31 @@ function deplacement(evt) {
            switch (evt.keyCode) {
                 // Gauche 
                 case 37:
-					ballX -= 15;
-                    if(ballX<15){ballX=15;}
+					ballX -= rayon;
+                    if(ballX<rayon){ballX=rayon;}
 					document.getElementById('ball').setAttribute("cx", ballX);
 					break;
                 // Droite 
                 case 39:
-                    ballX += 15;
-                    if (ballX > 885) {ballX = 885;}
+                    var limit = width - rayon;
+                    ballX += rayon;
+                    if (ballX > limit) {ballX = limit ;}
                     document.getElementById('ball').setAttribute("cx",ballX);
                     break;
 
 				// Haut 
                 case 38:
                     ballY -= 15;
-                    if (ballY < 15){ballY = 15;}
+                    if (ballY < rayon){ballY = rayon;}
                     document.getElementById('ball').setAttribute("cy",ballY);
                     break;
 
 
 				// Bas 
                 case 40:
-                ballY += 15;
-                    if (ballY > 385){ballY = 385;}
+                    var limit = height - rayon;
+                    ballY += rayon;
+                    if (ballY > limit){ballY = limit;}
                     document.getElementById('ball').setAttribute("cy",ballY);
                     break;
 
