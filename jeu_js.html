@@ -16,11 +16,13 @@ var height = 400;
 var rayon = 15;
 
 function principale(){
+
+    //Lance la fonction bouger() à interval de "speedd"
+	enemy = setInterval(bouger, speed);
 	//Ajout d'un écouteur sur les touches
 	window.addEventListener('keydown', deplacement, true);
     
-	//Lance la fonction bouger() à interval de "speedd"
-	enemy = setInterval(bouger, speed);
+	
 	
 }
 
