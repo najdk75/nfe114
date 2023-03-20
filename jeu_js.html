@@ -76,8 +76,6 @@ function bouger(){
         ennemy_ballX = width - rayon;
         ennemy_ballY = height / 2;
         clearInterval(enemy);
-        enemy = setInterval(bouger,speed);
-
         document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
         document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
 
