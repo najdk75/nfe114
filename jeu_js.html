@@ -14,6 +14,7 @@ var speed = 500;
 var width = 900;
 var height = 400;
 var rayon = 15;
+var velocity = 15;
 
 function principale(){
 
@@ -37,9 +38,9 @@ function bouger(){
 
     
     if (ballY > ennemy_ballY) {
-        ennemy_ballY += 15;
+        ennemy_ballY += velocity;
     } else if (ballY < ennemy_ballY) {
-        ennemy_ballY -= 15;
+        ennemy_ballY -= velocity;
 
     }
     
@@ -54,9 +55,10 @@ function bouger(){
         ennemy_ballY = ballY;
     }
     
-    ennemy_ballX-= 15;
+    ennemy_ballX-= velocity;
         if (ennemy_ballX <= 15) {
             ennemy_ballX = width - rayon;
+            velocity*= 1.10;
         }
     document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
