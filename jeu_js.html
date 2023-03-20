@@ -15,10 +15,11 @@ var width = 900;
 var height = 400;
 var rayon = 15;
 var velocity = 40;
+var manche = 0;
 
 function principale(){
 
-   
+   document.getElementById("manche").innerText = manche;
 	//Ajout d'un écouteur sur les touches
 	window.addEventListener('keydown', deplacement, true);
      //Lance la foncction bouger() à interval de "speedd"
@@ -66,7 +67,7 @@ function bouger(){
     document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
     
-	if (Math.abs(ballY - ennemy_ballY) < 2*rayon && Math.abs(ballX - ennemy_ballX) < 2*rayon) {
+	if (Math.abs(ballY - ennemy_ballY) < rayon && Math.abs(ballX - ennemy_ballX) < rayon) {
         alert("Vous avez perdu!");
         return;
     }
@@ -118,7 +119,7 @@ function deplacement(evt) {
 	<svg id="zonedejeux">
 	<circle cx="450" cy="200" r="15" fill="tomato" id="ball" />
     <circle cx="885" cy="200" r="15" fill="blue" id="ennemy_ball">
-	
 	</svg>
+    <h1 id="manche"></h1>
 <body>
 </html>
