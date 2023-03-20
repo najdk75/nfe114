@@ -49,7 +49,7 @@ function bouger(){
         ennemy_ballY =  height - rayon;
     }
 
-    if (Math.abs(ballY - ennemy_ballY) < 15) {
+    if (Math.abs(ballY - ennemy_ballY) < rayon) {
         ennemy_ballY = ballY;
     }
     
@@ -60,7 +60,9 @@ function bouger(){
     document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
     
-	
+	if (Math.abs(ballY - ennemy_ballY) < rayon && Math.abs(ballX - ennemy_ballX) < rayon) {
+        alert("Vous avez perdu!");
+    }
 }
 
 
