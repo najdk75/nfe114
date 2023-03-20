@@ -58,6 +58,7 @@ function bouger(){
     
 	if (Math.abs(ballY - ennemy_ballY) < 2*rayon && Math.abs(ballX - ennemy_ballX) < 2*rayon) {
         alert("Vous avez perdu!");
+        return;
     }
 }
 
