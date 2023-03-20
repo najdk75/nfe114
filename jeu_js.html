@@ -66,24 +66,27 @@ function bouger(){
             enemy = setInterval(bouger,speed);
             manche +=1;
         }
-    document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
+        document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
     
 	if (Math.abs(ballY - ennemy_ballY) < rayon && Math.abs(ballX - ennemy_ballX) < rayon) {
         alert("Vous avez perdu!");
-        reset();
+        manche = 0;
+        speed = start_speed;
+        ennemy_ballX = width - rayon;
+        ennemy_ballY = height / 2;
+        clearInterval(enemy);
+        enemy = setInterval(bouger,speed);
+
+        document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
+        document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
+
     }
+
+    
 }
 
-function reset() {
-    speed = start_speed;
-    manche = 1;
-    ennemy_ballX = width - rayon;
-    ennemy_ballY = height/2;
-    clearInterval(enemy);
 
-    principale();
-}
 
 
 function deplacement(evt) {
