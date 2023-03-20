@@ -60,7 +60,7 @@ function bouger(){
     document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
     
-	if (Math.abs(ballY - ennemy_ballY) < rayon && Math.abs(ballX - ennemy_ballX) < rayon) {
+	if (Math.abs(ballY - ennemy_ballY) < 2*rayon && Math.abs(ballX - ennemy_ballX) < 2*rayon) {
         alert("Vous avez perdu!");
     }
 }
