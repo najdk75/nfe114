@@ -61,7 +61,7 @@ function bouger(){
     ennemy_ballX-= velocity;
         if (ennemy_ballX <= 15) {
             ennemy_ballX = width - rayon;
-            speed /= 2;
+            speed /= 1.5;
             clearInterval(enemy);
             enemy = setInterval(bouger,speed);
             manche +=1;
@@ -74,7 +74,7 @@ function bouger(){
         manche = 0;
         speed = start_speed;
         ennemy_ballX = width - rayon;
-        ennemy_ballY = height / 1.5;
+        ennemy_ballY = height / 2;
         clearInterval(enemy);
         enemy = setInterval(bouger,speed);
 
