@@ -35,8 +35,13 @@ function bouger(){
     var ennemy_ballX = parseInt(document.getElementById('ennemy_ball').getAttribute("cx"));
     var ennemy_ballY = parseInt(document.getElementById('ennemy_ball').getAttribute("cy"));
 
-    ennemy_ballY += (ballY > ennemy_ballY) ? 15 : -15;
-  
+    
+    if (ballY > ennemy_ballY) {
+        ennemy_ballY += 15;
+    } else if (ballY < ennemy_ballY) {
+        ennemy_ballY -= 15;
+
+    }
     
     if (ennemy_ballY < 0){
         ennemy_ballY = rayon;
@@ -58,7 +63,6 @@ function bouger(){
     
 	if (Math.abs(ballY - ennemy_ballY) < 2*rayon && Math.abs(ballX - ennemy_ballX) < 2*rayon) {
         alert("Vous avez perdu!");
-        return;
     }
 }
 
