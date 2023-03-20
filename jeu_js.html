@@ -10,13 +10,13 @@ h1{position:absolute;top:-7px; left:320px; z-index:2;}
 
 <script>
 //var globale.
-var start_speed = 500;
+var start_speed = 10;
 var speed = speed;
 var width = 900;
 var height = 400;
 var rayon = 15;
-var velocity = 40;
-var manche = 0;
+var velocity = 1;
+var manche = 1;
 
 function principale(){
 
@@ -72,6 +72,7 @@ function bouger(){
 	if (Math.abs(ballY - ennemy_ballY) < rayon && Math.abs(ballX - ennemy_ballX) < rayon) {
         alert("Vous avez perdu!");
         speed = start_speed;
+        manche = 1;
         return;
     }
 }
