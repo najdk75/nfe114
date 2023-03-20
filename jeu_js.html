@@ -10,7 +10,8 @@ h1{position:absolute;top:-7px; left:320px; z-index:2;}
 
 <script>
 //var globale.
-var speed = 500;
+var start_speed = 500;
+var speed = speed;
 var width = 900;
 var height = 400;
 var rayon = 15;
@@ -19,7 +20,6 @@ var manche = 0;
 
 function principale(){
 
-   document.getElementById("manche").innerText = manche;
 	//Ajout d'un écouteur sur les touches
 	window.addEventListener('keydown', deplacement, true);
      //Lance la foncction bouger() à interval de "speedd"
@@ -30,6 +30,8 @@ function principale(){
 }
 
 function bouger(){
+    document.getElementById("manche").innerText = manche;
+
     var ballX = parseInt(document.getElementById('ball').getAttribute("cx"));
     var ballY = parseInt(document.getElementById('ball').getAttribute("cy"));
 
@@ -62,12 +64,14 @@ function bouger(){
             speed /= 2;
             clearInterval(enemy);
             enemy = setInterval(bouger,speed);
+            manche +=1;
         }
     document.getElementById('ennemy_ball').setAttribute("cx",ennemy_ballX);
     document.getElementById('ennemy_ball').setAttribute("cy",ennemy_ballY);
     
 	if (Math.abs(ballY - ennemy_ballY) < rayon && Math.abs(ballX - ennemy_ballX) < rayon) {
         alert("Vous avez perdu!");
+        speed = start_speed;
         return;
     }
 }
