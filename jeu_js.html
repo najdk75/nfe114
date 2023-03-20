@@ -23,7 +23,6 @@ function principale(){
 	//Ajout d'un écouteur sur les touches
 	window.addEventListener('keydown', deplacement, true);
      //Lance la foncction bouger() à interval de "speedd"
-    console.log(speed);
 	enemy = setInterval(bouger, speed);
     
 	
@@ -119,7 +118,7 @@ function deplacement(evt) {
 	<svg id="zonedejeux">
 	<circle cx="450" cy="200" r="15" fill="tomato" id="ball" />
     <circle cx="885" cy="200" r="15" fill="blue" id="ennemy_ball">
-	</svg>
+	</svg><br>
     <h1 id="manche"></h1>
 <body>
 </html>
