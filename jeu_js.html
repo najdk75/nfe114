@@ -71,10 +71,18 @@ function bouger(){
     
 	if (Math.abs(ballY - ennemy_ballY) < rayon && Math.abs(ballX - ennemy_ballX) < rayon) {
         alert("Vous avez perdu!");
-        speed = start_speed;
-        manche = 1;
-        return;
+        reset();
     }
+}
+
+function reset() {
+    speed = start_speed;
+    manche = 1;
+    ennemy_ballX = width - rayon;
+    ennemy_ballY = height/2;
+    clearInterval(enemy);
+
+    principale();
 }
 
 
