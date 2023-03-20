@@ -41,12 +41,16 @@ function bouger(){
         ennemy_ballY -= 15;
 
     }
-
+    
     if (ennemy_ballY < 0){
         ennemy_ballY = rayon;
     } 
     if (ennemy_ballY > height){
         ennemy_ballY =  height - rayon;
+    }
+
+    if (Math.abs(ballY - ennemy_ballY) < 15) {
+        ennemy_ballY = ballY;
     }
     
     ennemy_ballX-= 15;
