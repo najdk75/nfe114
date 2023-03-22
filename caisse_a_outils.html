@@ -12,12 +12,16 @@
         }
 
         function controler(){
-            if(document.getElementById('Control').checked){
+            if(document.getElementById('img1').checked){
                     alert("Bouton option coché");
                 }
             else{
                 alert("Bouton option NON coché");
             }		
+
+            document.getElementById('image1').checked ?  document.getElementById('img1').style.display="Block" : document.getElementById('img1').style.display="None";
+            document.getElementById('image2').checked ?  document.getElementById('img2').style.display="Block" : document.getElementById('img1').style.display="None";
+            document.getElementById('image3').checked ?  document.getElementById('img3').style.display="Block" : document.getElementById('img1').style.display="None";
         }
 
         </script>
