@@ -4,18 +4,18 @@
         function affichage(){
             alert("Tout est OK !");
         }
-        function cacher(){
-            document.getElementById('DuTexte').style.display="None";
+        function cacher(id){
+            document.getElementById(id).style.display="None";
         }
-        function presenter(){
-            document.getElementById('DuTexte').style.display="Block";
+        function presenter(id){
+            document.getElementById(id).style.display="Block";
         }
 
         function controler(){
           
-            document.getElementById('image1').checked ?  document.getElementById('img1').style.display="Block" : document.getElementById('img1').style.display="None";
-            document.getElementById('image2').checked ?  document.getElementById('img2').style.display="Block" : document.getElementById('img2').style.display="None";
-            document.getElementById('image3').checked ?  document.getElementById('img3').style.display="Block" : document.getElementById('img3').style.display="None";
+            document.getElementById('image1').checked ?  presenter("img1") : cacher("img1")
+            document.getElementById('image2').checked ?  presenter("img2") : cacher("img2")
+            document.getElementById('image3').checked ?  presenter("img3") : cacher("img3")
         }
 
         </script>
