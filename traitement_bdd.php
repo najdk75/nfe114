@@ -13,7 +13,7 @@ $result = $base->query($sql);
 if ($result->rowCount() == 0) { 
     echo '<span style="color:red">'.$NAME.' n\'est pas dans la base de données.</span>'; 
  } else {
-    echo echo '<span style="color:blue">'.$NAME.' n\'est pas dans la base de données.</span>';
+    echo '<span style="color:blue">'.$NAME.' n\'est pas dans la base de données.</span>';
  }
 
 ?>
