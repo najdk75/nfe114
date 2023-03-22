@@ -1,4 +1,4 @@
 <?php
-$NAME = $_GET['nom'];
-echo 'Bonjour '.$NAME;
+$PALINDROME = $_GET['palindrome'];
+echo 'Bonjour '.$PALINDROME;
 ?>
