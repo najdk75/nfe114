@@ -4,7 +4,7 @@
         function envoi_serveur(){
         var Saisie = document.getElementById('saisie').value;
         var req= new XMLHttpRequest();
-        req.open("GET","traitement.php?palindrome="+Saisie,false); 
+        req.open("GET","traitement.php?word="+Saisie,false); 
         req.send(null); 
         document.getElementById('Result').innerHTML = req.responseText;;
         }
