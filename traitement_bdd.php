@@ -1,19 +1,24 @@
 <?php
 $NAME = $_GET['nom'];
 
-// connexion baseee de données 
-$base = new PDO('mysql:host=localhost; dbname=id20205717_noms', 'id20205717_najd', '0$62q}/Fw])IOlry');
+if (strlen($NAME) >= 2 && strlen($NAME) <= 10){
 
-$base->exec("SET CHARACTER SET utf8");
+    // connexion baseee de données 
+    $base = new PDO('mysql:host=localhost; dbname=id20205717_noms', 'id20205717_najd', '0$62q}/Fw])IOlry');
 
-$sql = "SELECT * FROM personne WHERE nom='$NAME'";
+    $base->exec("SET CHARACTER SET utf8");
 
-$result = $base->query($sql);
+    $sql = "SELECT * FROM personne WHERE nom='$NAME'";
 
-if ($result->rowCount() == 0) { 
-    echo '<span style="color:red">'.$NAME.' </span>n\'est pas dans la base de données.'; 
- } else {
-    echo '<span style="color:blue">'.$NAME.' </span>n\'est pas dans la base de données.';
- }
+    $result = $base->query($sql);
 
+    if ($result->rowCount() == 0) { 
+        echo '<span style="color:red">'.$NAME.' </span>n\'est pas dans la base de données.'; 
+    } else {
+        echo '<span style="color:blue">'.$NAME.' </span>n\'est pas dans la base de données.';
+    }
+    
+} else {
+    echo "Insérez un nom d'une longueur comprise entre 2 et 10 caractères.";
+}
 ?>
