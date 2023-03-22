@@ -11,7 +11,7 @@ $sql = "SELECT * FROM personne WHERE nom='$NAME'";
 $result = $base->query($sql);
 
 if ($result->rowCount() == 0) { 
-    echo "<span style='color:red>'". $NAME ." </span> n'est dans la base de données.";
+    echo '<span style="color:red">'. $NAME ."</span> n'est dans la base de données.";
  } else {
     echo $NAME . " est dans la base de données.";
  }
