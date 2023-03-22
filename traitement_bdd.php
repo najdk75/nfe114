@@ -1,7 +1,7 @@
 <?php
 $NAME = $_GET['nom'];
 
-// connexion basee de données 
+// connexion baseee de données 
 $base = new PDO('mysql:host=localhost; dbname=id20205717_noms', 'id20205717_najd', '0$62q}/Fw])IOlry');
 
 $base->exec("SET CHARACTER SET utf8");
