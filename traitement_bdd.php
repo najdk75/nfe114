@@ -6,7 +6,7 @@ $base = new PDO('mysql:host=localhost; dbname=id20205717_noms', 'id20205717_najd
 
 $base->exec("SET CHARACTER SET utf8");
 
-$sql = "SELECT * FROM personne WHERE nom=$NAME";
+$sql = "SELECT * FROM personne WHERE nom='$NAME'";
 
 $result = $base->query($sql);
 
