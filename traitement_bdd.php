@@ -10,7 +10,7 @@ $sql = "SELECT * FROM personne WHERE nom=$NOM";
 
 $result = $base->query($sql);
 
-if (mysql_num_rows($result) == 0) { 
+if ($result->rowCount() == 0) { 
     echo $NOM ." n'est dans la base de données.";
  } else {
     echo $NOM . " est dans la base de données.";
