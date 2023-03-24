@@ -3,9 +3,9 @@ $NAME = $_GET['nom'];
 $MESSAGE_RETOUR = '';
 $BONNES_CONDITIONS = false;
 if (strlen($NAME) < 2){
-    $MESSAGE_RETOUR = '<span style="color:red"<strong>'.$NAME .'</strong> : Ce pseudo est trop court.</span>';
+    $MESSAGE_RETOUR = '<span style="color:red"><strong>'.$NAME .'</strong> : Ce pseudo est trop court.</span>';
 } else if (strlen($NAME) > 10) {
-    $MESSAGE_RETOUR = '<span style="color:red"<strong>'.$NAME .'</strong> : Ce pseudo est trop long.</span>';
+    $MESSAGE_RETOUR = '<span style="color:red"><strong>'.$NAME .'</strong> : Ce pseudo est trop long.</span>';
 } else {
     $BONNES_CONDITIONS = true;
 }
