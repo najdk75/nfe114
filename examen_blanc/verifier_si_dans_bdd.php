@@ -21,7 +21,7 @@ $RESULT = $base->query($SQL);
     }
 
 $REPONSE = array(
-    'peut_inserer' => $EST_DANS_LA_BDD,
+    'peut_inserer' => $PEUT_INSERER,
     'message' => $MESSAGE_RETOUR,
 )
     
