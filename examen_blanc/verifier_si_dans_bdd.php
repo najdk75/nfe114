@@ -10,7 +10,7 @@ $BASE->exec("SET CHARACTER SET utf8");
 
 $SQL = "SELECT * FROM personne WHERE nom='$NAME'";
 
-$RESULT = $base->query($SQL);
+$RESULT = $BASE->query($SQL);
 
     if ($RESULT->rowCount() == 0) {     
         $MESSAGE_RETOUR = '<span style="color:red"><strong>'.$NAME.'</strong> : Ce pseudo est libre. </span>'; 
