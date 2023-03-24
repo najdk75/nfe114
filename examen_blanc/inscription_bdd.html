@@ -37,10 +37,8 @@
             req.send(null);
             
             var reponse = JSON.parse(req.responseText);
-            if (reponse.message.length > 0) {
-                document.getElementById('response').innerHTML = reponse.message;
-
-            }
+           
+            document.getElementById('response').innerHTML = reponse.message;
 
             return reponse.est_valide
 
