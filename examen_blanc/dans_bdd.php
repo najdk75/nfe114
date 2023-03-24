@@ -2,7 +2,7 @@
 $NAME = $_GET['nom'];
 
 $MESSAGE_RETOUR = '';
-$PEUT_INSERER = true;
+$PEUT_INSERER = false;
     // connexion baseee de données 
     
 $BASE = new PDO('mysql:host=localhost; dbname=id20205717_noms', 'id20205717_najd', '0$62q}/Fw])IOlry');
