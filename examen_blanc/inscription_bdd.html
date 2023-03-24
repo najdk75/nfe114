@@ -22,7 +22,7 @@
         
         function valider_longueur(nom){
             var req = new XMLHttpRequest();
-            rep.open("GET","verifier_longueur.php?nom="+nom,false);
+            req.open("GET","verifier_longueur.php?nom="+nom,false);
             req.send(null);
             
             var reponse = JSON.parse(req.responseText);
