@@ -1,5 +1,12 @@
 <html>
     <body>
+    
+        <!-- oi-->
+    <h1>Formulaire de recherche</h1>
+    <p>Nom ? <input id="nom" /></p>
+    <p><button onclick="envoi_serveur()">Envoyer</button></p>
+    <div id="response"></div>
+
     <script>
         var nom = document.getElementById('nom');
         nom.addEventListener("input",valider_nom)
@@ -20,11 +27,6 @@
 
         
     </script>    
-        <!-- oi-->
-    <h1>Formulaire de recherche</h1>
-    <p>Nom ? <input id="nom" /></p>
-    <p><button onclick="envoi_serveur()">Envoyer</button></p>
-    <div id="response"></div>
 
     </body>
 </html>
