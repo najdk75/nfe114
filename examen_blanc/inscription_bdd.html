@@ -49,7 +49,7 @@
 
         function valider_bdd(nom){
             var req = new XMLHttpRequest();
-            req.open("GET","verifier_si_dans_bdd.php?nom="+nom,false);
+            req.open("GET","dans_bdd.php?nom="+nom,false);
             req.send(null);
 
             var reponse = JSON.parse(req.responseText);
