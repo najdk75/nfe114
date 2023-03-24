@@ -18,7 +18,11 @@
             var est_de_bonne_longueur = valider_longueur(nom_input);
             var peut_inserer = valider_bdd(nom_input);
 
-            if (est_de_bonne_longueur && peut_inserer) {
+            peut_envoyer = est_de_bonne_longueur && peut_inserer;
+
+
+            if (peut_envoyer) {
+                document.querySelector('button').disabled = true;
                 envoi_serveur();
             }
         }
