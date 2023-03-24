@@ -11,10 +11,10 @@ $sql = "INSERT INTO personne VALUES(NULL,'$NAME')";
 $result = $base->query($sql);
 
 if ($result == false) { 
-    echo '<span style="color:red">'.$NAME.' </span>n\'a pas pu être ajouté dans la BDD.'; 
+    echo '<span style="color:red"><strong>'.$NAME.'</strong> n\'a pas pu être ajouté dans la BDD.</span>'; 
 } 
 else {
-    echo '<span style="color:blue">'.$NAME.' </span>n\'a été ajouté dans la BDD.';
+    echo '<span style="color:green"><strong>'.$NAME.'</strong> </span> a été ajouté dans la BDD.</span>';
 }
     
 

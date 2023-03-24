@@ -10,22 +10,26 @@
     <script>
         var nom = document.getElementById('nom');
         nom.addEventListener("input",valider_nom);
+        resp = document.getElementById('response');
 
         function valider_nom() {
             var nom_input = nom.value;
+            if (nom_input.length == 0) {
+                resp.innerHTML = "";
+            }
             var est_de_bonne_longueur = valider_longueur(nom_input);
             if (est_de_bonne_longueur == false) {
-                document.getElementById('bouton').disabled = true;
+                rep.disabled = true;
                 return;
             }
             
             var peut_inserer = valider_bdd(nom_input);
             if (peut_inserer == false) {
-                document.getElementById('bouton').disabled = true;
+                rep.disabled = true;
                 return;
             }
 
-            document.getElementById('bouton').disabled = false;
+            resp.disabled = false;
         }
 
         
