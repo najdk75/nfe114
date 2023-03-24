@@ -2,7 +2,7 @@
 $NAME = $_GET['nom'];
 
 $MESSAGE_RETOUR = '';
-$EST_DANS_LA_BDD = false;
+$PEUT_INSERER = false;
     // connexion baseee de données 
     
 $BASE = new PDO('mysql:host=localhost; dbname=id20205717_noms', 'id20205717_najd', '0$62q}/Fw])IOlry');
@@ -21,7 +21,7 @@ $RESULT = $base->query($SQL);
     }
 
 $REPONSE = array(
-    'dispo' => $EST_DANS_LA_BDD,
+    'peut_inserer' => $EST_DANS_LA_BDD,
     'message' => $MESSAGE_RETOUR,
 )
     

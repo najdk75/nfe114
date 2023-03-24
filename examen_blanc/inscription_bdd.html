@@ -13,13 +13,14 @@
         var peut_envoyer = false;
 
         function valider_nom(){
-            var nom_input = nom.textContent;
-            if (nom_input.length == 0) {
-                document.getElementById('response').innerHTML = "";
-            }
+            var nom_input = nom.value;
+            
             var est_de_bonne_longueur = valider_longueur(nom_input);
-            //var est_dans_la_bdd = valider_bdd(nom_input);
+            var peut_inserer = valider_bdd(nom_input);
 
+            if (est_de_bonne_longueur && peut_inserer) {
+                envoi_serveur();
+            }
         }
         
         function valider_longueur(nom){
@@ -28,7 +29,6 @@
             req.send(null);
             
             var reponse = JSON.parse(req.responseText);
-            console.log(reponse);
             document.getElementById('response').innerHTML = reponse.message;
 
             return reponse.est_valid
@@ -36,13 +36,25 @@
 
         }
 
+        function valider_bdd(nom){
+            var req = new XMLHttpRequest();
+            req.open("GET","verifier_si_dans_bdd.php?nom="+nom,false);
+            req.send(null);
+
+            var reponse = JSON.parse(req.responseText);
+            document.getElementById('response').innerHTML = reponse.message;
+
+            return reponse.est_dans_bdd
+
+        }
+
 
         function envoi_serveur(){
-        var nom_input = document.getElementById('nom').value;
-        var req= new XMLHttpRequest();
-        req.open("GET","insertion.php?nom="+nom_input,false); 
-        req.send(null); 
-        document.getElementById('response').innerHTML = req.responseText;
+            var nom_input = document.getElementById('nom').value;
+            var req= new XMLHttpRequest();
+            req.open("GET","insertion.php?nom="+nom_input,false); 
+            req.send(null); 
+            document.getElementById('response').innerHTML = req.responseText;
         }
 
         
