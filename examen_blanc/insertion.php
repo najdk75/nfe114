@@ -14,7 +14,7 @@ if ($result == false) {
     echo '<span style="color:red"><strong>'.$NAME.'</strong> n\'a pas pu être ajouté dans la BDD.</span>'; 
 } 
 else {
-    echo '<span style="color:green"><strong>'.$NAME.'</strong> </span> a été ajouté dans la BDD.</span>';
+    echo '<span style="color:green"><strong>'.$NAME.'</strong> a été ajouté dans la BDD.</span>';
 }
     
 
