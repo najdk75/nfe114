@@ -11,8 +11,9 @@
         var nom = document.getElementById('nom');
         nom.addEventListener("input",valider_nom);
         var peut_envoyer = false;
-
+        document.querySelector('button').disabled = peut_envoyer;
         function valider_nom() {
+            peut_envoyer = false;
             var nom_input = nom.value;
             
             var est_de_bonne_longueur = valider_longueur(nom_input);
@@ -22,8 +23,7 @@
             var peut_inserer = valider_bdd(nom_input);
             if (peut_inserer == false) return;
             
-            document.querySelector('button').disabled = true;
-    
+            peut_envoyer = true;
             
         }
 
