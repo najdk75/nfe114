@@ -2,21 +2,29 @@
 $NAME = $_GET['nom'];
 
 $MESSAGE_RETOUR = '';
-$
+$EST_DANS_LA_BDD = false;
     // connexion baseee de données 
-    $base = new PDO('mysql:host=localhost; dbname=id20205717_noms', 'id20205717_najd', '0$62q}/Fw])IOlry');
-
-    $base->exec("SET CHARACTER SET utf8");
-
-    $sql = "SELECT * FROM personne WHERE nom='$NAME'";
-
-    $result = $base->query($sql);
-
-    if ($result->rowCount() == 0) { 
-        echo '<span style="color:red">'.$NAME.' </span>n\'est pas dans la base de données.'; 
-    } else {
-        echo '<span style="color:blue">'.$NAME.' </span>n\'est pas dans la base de données.';
-    }
     
+$BASE = new PDO('mysql:host=localhost; dbname=id20205717_noms', 'id20205717_najd', '0$62q}/Fw])IOlry');
+$BASE->exec("SET CHARACTER SET utf8");
+
+$SQL = "SELECT * FROM personne WHERE nom='$NAME'";
+
+$RESULT = $base->query($SQL);
+
+    if ($RESULT->rowCount() == 0) {     
+        $MESSAGE_RETOUR = '<span style="color:red"><strong>'.$NAME.'</strong> : Ce pseudo est libre. </span>'; 
+        $EST_DANS_LA_BDD = true;
+    } else {
+        $MESSAGE_RETOUR = '<span style="color:green"><strong>'.$NAME.'</strong>: Ce pseudo est déjà pris.</span>';
+
+    }
+
+$REPONSE = array(
+    'dispo' => $EST_DANS_LA_BDD,
+    'message' => $MESSAGE_RETOUR,
+)
+    
+echo json_encode($REPONSE);
 
 ?>

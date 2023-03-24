@@ -9,9 +9,9 @@ if (strlen($NAME) < 2){
 } else {
     $BONNES_CONDITIONS = true;
 }
-$reponse = array(
+$REPONSE = array(
     'est_valide' => $BONNES_CONDITIONS,
     'message' => $MESSAGE_RETOUR,
 );
-echo json_encode($reponse);
+echo json_encode($REPONSE);
 ?>
