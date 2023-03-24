@@ -1,8 +1,16 @@
 <html>
     <body>
     <script>
-        function envoi_serveur(){
+        var nom = document.getElementById('nom');
+        nom.addEventListener("input",valider_nom)
 
+        function valider_nom(){
+            document.getElementById('response').innerHTML = "Hello";
+
+        }
+
+
+        function envoi_serveur(){
         var nom_input = document.getElementById('nom').value;
         var req= new XMLHttpRequest();
         req.open("GET","insertion.php?nom="+nom_input,false); 
@@ -10,7 +18,7 @@
         document.getElementById('response').innerHTML = req.responseText;
         }
 
-    
+        
     </script>    
         <!-- oi-->
     <h1>Formulaire de recherche</h1>
