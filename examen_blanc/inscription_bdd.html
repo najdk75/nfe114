@@ -13,7 +13,7 @@
         var peut_envoyer = false;
 
         function valider_nom(){
-            var nom_input = nom.value;
+            var nom_input = nom.textContent;
             if (nom_input.length == 0) {
                 document.getElementById('response').innerHTML = "";
             }
