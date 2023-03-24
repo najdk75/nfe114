@@ -26,7 +26,7 @@
             req.send(null);
             
             var reponse = JSON.parse(req.responseText);
-            alert(reponse.message);
+            console.log(reponse);
             document.getElementById('response').innerHTML = reponse.message;
 
             return reponse.est_valid
