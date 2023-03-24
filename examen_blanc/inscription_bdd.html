@@ -1,7 +1,7 @@
 <html>
     <body>
     
-        <!-- ooeeeei-->
+        <!-- ooeei-->
     <h1>Formulaire de recherche</h1>
     <p>Nom ? <input id="nom" /></p>
     <p><button onclick="envoi_serveur()" id="bouton" disabled>Envoyer</button></p>
@@ -10,24 +10,24 @@
     <script>
         var nom = document.getElementById('nom');
         nom.addEventListener("input",valider_nom);
-        resp = document.getElementById('response');
+        
 
         function valider_nom() {
             var nom_input = nom.value;
-            
+            if (nom_input.length == 0) {}
             var est_de_bonne_longueur = valider_longueur(nom_input);
             if (est_de_bonne_longueur == false) {
-                rep.disabled = true;
+                document.getElementById('bouton').disabled = true;
                 return;
             }
             
             var peut_inserer = valider_bdd(nom_input);
             if (peut_inserer == false) {
-                rep.disabled = true;
+                document.getElementById('bouton').disabled = true;
                 return;
             }
 
-            resp.disabled = false;
+            document.getElementById('bouton').disabled = false;
         }
 
         
@@ -37,7 +37,6 @@
             req.send(null);
             
             var reponse = JSON.parse(req.responseText);
-           
             document.getElementById('response').innerHTML = reponse.message;
 
             return reponse.est_valide
