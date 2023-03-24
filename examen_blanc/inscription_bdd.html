@@ -4,14 +4,13 @@
         <!-- ooeei-->
     <h1>Formulaire de recherche</h1>
     <p>Nom ? <input id="nom" /></p>
-    <p><button onclick="envoi_serveur()" disabled>Envoyer</button></p>
+    <p><button onclick="envoi_serveur()" id="bouton" disabled>Envoyer</button></p>
     <div id="response"></div>
 
     <script>
         var nom = document.getElementById('nom');
         nom.addEventListener("input",valider_nom);
-        var peut_envoyer = false;
-        document.querySelector('button').disabled = peut_envoyer;
+
         function valider_nom() {
             peut_envoyer = false;
             var nom_input = nom.value;
@@ -23,7 +22,8 @@
             var peut_inserer = valider_bdd(nom_input);
             if (peut_inserer == false) return;
             
-            peut_envoyer = true;
+
+            document.getElementById('bouton').disabled = false;
             
         }
 

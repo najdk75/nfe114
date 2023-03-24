@@ -13,10 +13,10 @@ $SQL = "SELECT * FROM personne WHERE nom='$NAME'";
 $RESULT = $BASE->query($SQL);
 
     if ($RESULT->rowCount() == 0) {     
-        $MESSAGE_RETOUR = '<span style="color:red"><strong>'.$NAME.'</strong> : Ce pseudo est libre. </span>'; 
+        $MESSAGE_RETOUR = '<span style="color:green"><strong>'.$NAME.'</strong> : Ce pseudo est libre. </span>'; 
         $PEUT_INSERER = true;
     } else {
-        $MESSAGE_RETOUR = '<span style="color:green"><strong>'.$NAME.'</strong>: Ce pseudo est déjà pris.</span>';
+        $MESSAGE_RETOUR = '<span style="color:red"><strong>'.$NAME.'</strong>: Ce pseudo est déjà pris.</span>';
 
     }
 
