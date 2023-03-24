@@ -4,15 +4,33 @@
         <!-- oi-->
     <h1>Formulaire de recherche</h1>
     <p>Nom ? <input id="nom" /></p>
-    <p><button onclick="envoi_serveur()">Envoyer</button></p>
+    <p><button onclick="envoi_serveur()" disabled>Envoyer</button></p>
     <div id="response"></div>
 
     <script>
         var nom = document.getElementById('nom');
-        nom.addEventListener("input",valider_nom)
+        nom.addEventListener("input",valider_nom);
+        var peut_envoyer = false;
 
         function valider_nom(){
-            document.getElementById('response').innerHTML = "Hello";
+            var nom_input = nom.value;
+            
+            var est_de_bonne_longueur = valider_longueur(nom_input);
+            
+
+        }
+        
+        function valider_longueur(nom){
+            var req = new XMLHttpRequest();
+            rep.open("GET","verifier_longueur.php?nom="+nom,false);
+            req.send(null);
+            
+            var reponse = JSON.parse(req.responseText);
+
+            document.getElementById('response').innerHTML = reponse.message;
+
+            return reponse.est_valid
+
 
         }
 
