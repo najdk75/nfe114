@@ -9,7 +9,7 @@ $base = new PDO('mysql:host=localhost; dbname=id20205717_contact', 'id20205717_n
 
 $base->exec("SET CHARACTER SET utf8");
 
-$sql = "INSERT INTO contact VALUES(NULL,'$NAME','$EMAIL','$MESSAGE')";
+$sql = "INSERT INTO personne VALUES(NULL,'$NAME','$EMAIL','$MESSAGE')";
 
 $result = $base->query($sql);
     
