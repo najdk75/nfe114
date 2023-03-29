@@ -25,7 +25,7 @@
             document.querySelectorAll('.munition').forEach(item => {
                 item.addEventListener('click', event => {
                     const cercle = event.target;
-                    cercle.fill = 'red';
+                    cercle.setAttribute("fill","red");
             })
         })
             
