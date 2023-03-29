@@ -5,9 +5,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-$NAME = $POST['name'];
-$EMAIL = $POST['_replyto'];
-$MESSAGE = $POST['message'];
+$NAME = $_POST['name'];
+$EMAIL = $_POST['_replyto'];
+$MESSAGE = $_POST['message'];
 
 
 // conneexionn baseee de données 
