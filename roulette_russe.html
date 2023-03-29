@@ -21,11 +21,17 @@
     <head>
         <script>
 
-            //
+            var compteur = 0;
             document.querySelectorAll('.munition').forEach(item => {
                 item.addEventListener('click', event => {
                     const cercle = event.target;
-                    cercle.getAttribute("fill") == "gray" ? cercle.setAttribute("fill","red") : cercle.setAttribute("fill","gray")
+                    if (cercle.getAttribute("fill") == "gray"){
+                        cercle.setAttribute("fill","red");
+                        compteur++;
+                    } else {
+                        cercle.setAttribute("fill","gray");
+                        compteur--;
+                    }
             })
         })
             
