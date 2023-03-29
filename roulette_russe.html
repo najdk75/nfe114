@@ -22,10 +22,12 @@
         <script>
 
             var compteur = 0;
-            document.querySelector('.munition').addEventListener('click', event => {
-                const cercle = event.target;
-                cercle.style.backgroundColor = 'red';
-            });
+            document.querySelectorAll('.munition').forEach(item => {
+                item.addEventListener('click', event => {
+                    const cercle = event.target;
+                    cercle.style.backgroundColor = 'red';
+            })
+        })
             
 
             function lancer(){
