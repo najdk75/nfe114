@@ -26,9 +26,12 @@
             document.querySelectorAll('.munition').forEach(item => {
                 item.addEventListener('click', event => {
                     const cercle = event.target;
-                    if (cercle.getAttribute("fill") == "gray" && compteur < 3){
-                        cercle.setAttribute("fill","red");
-                        compteur++;
+                    if (cercle.getAttribute("fill") == "gray"){
+                        if (compteur < 3 ){
+                            cercle.setAttribute("fill","red");
+                            compteur++;
+                        }
+                        
                     } else {
                         cercle.setAttribute("fill","gray");
                         compteur--;
@@ -44,6 +47,8 @@
                       } else {
                         var rd = Math.random() * 1;
                         var interval = compteur/6;
+                        console.log("rd = " + rd);
+                        console.log("interval = " + interval);
 
                         switch(compteur) {
                             case 1 : {
