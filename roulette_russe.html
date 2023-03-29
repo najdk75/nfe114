@@ -11,7 +11,7 @@
         <circle class="munition" id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
         <circle class="munition" id="Br5" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
         <circle class="munition" id="Br6" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle class="munition" cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
+        <circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
         </svg>	
         
         <button onclick="lancer()">Jouer</button>	
@@ -25,7 +25,7 @@
             document.querySelectorAll('.munition').forEach(item => {
                 item.addEventListener('click', event => {
                     const cercle = event.target;
-                    cercle.setAttribute("fill","red");
+                    cercle.getAttribute("fill") == "gray" ? cercle.setAttribute("fill","red") : cercle.setAttribute("fill","gray")
             })
         })
             
