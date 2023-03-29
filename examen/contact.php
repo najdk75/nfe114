@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 
 $NAME = $_POST['name'];
-$EMAIL = $_POST['_replyto'];
+$EMAIL = $_POST['replyto'];
 $MESSAGE = $_POST['message'];
 
 
