@@ -16,6 +16,7 @@
         
         <button onclick="lancer()">Jouer</button>	
         
+        
     </body>
 
     <head>
@@ -37,7 +38,6 @@
             
 
             function lancer(){
-                      alert("le barillet tourne");
                       if (compteur < 1 || compteur > 3) {
                         alert("Sélectionnez entre 1 et 3 munitions");
                 
@@ -77,14 +77,11 @@
             function reset(){
 
                 document.querySelectorAll('.munition').forEach(item => {
-                item.addEventListener('click', event => {
                     cercle.setAttribute("fill","gray");
                 })
-            })
+            
             }
             
-
-
             </script>
     </head>
 </html>
