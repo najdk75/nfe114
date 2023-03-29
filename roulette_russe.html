@@ -25,7 +25,7 @@
             document.querySelectorAll('.munition').forEach(item => {
                 item.addEventListener('click', event => {
                     const cercle = event.target;
-                    if (cercle.getAttribute("fill") == "gray"){
+                    if (cercle.getAttribute("fill") == "gray" && compteur < 3){
                         cercle.setAttribute("fill","red");
                         compteur++;
                     } else {
@@ -38,11 +38,51 @@
 
             function lancer(){
                       alert("le barillet tourne");
+                      if (compteur < 1 || compteur > 3) {
+                        alert("Sélectionnez entre 1 et 3 munitions");
+                
+                      } else {
+                        var rd = Math.random() * 1;
+                        var interval = compteur/6;
+
+                        switch(compteur) {
+                            case 1 : {
+                                if (rd < interval) {
+                                    alert("Vous avez gagné 10.000 euros")
+                                } else {
+                                    alert("Vous avez perdu")
+                                }
+                                break;
+                            }
+                            case 2 : {
+                                if (rd < interval) {
+                                    alert("Vous avez gagné 100.000 euros")
+                                } else {
+                                    alert("Vous avez perdu")
+                                }
+                                break;
+                            }
+                            
+                            case 3 : if (rd < interval) {
+                                    alert("Vous avez gagné 1.000.000 euros")
+                                } else {
+                                    alert("Vous avez perdu")
+                                }
+                                break;
+                        }
+                      }
+                      reset();
             }
             
-            function changer(){
+            function reset(){
 
+                document.querySelectorAll('.munition').forEach(item => {
+                item.addEventListener('click', event => {
+                    cercle.setAttribute("fill","gray");
+                })
+            })
             }
+            
 
 
             </script>
