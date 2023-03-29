@@ -5,13 +5,13 @@
 
         <svg width=200 height=200 style="background-color:antiquewhite">
         <circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
-        <circle id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle id="Br3" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle id="Br5" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle id="Br6" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
+        <circle class="munition" id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle class="munition" id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle class="munition" id="Br3" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle class="munition" id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle class="munition" id="Br5" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle class="munition" id="Br6" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle class="munition" cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
         </svg>	
         
         <button onclick="lancer()">Jouer</button>	
@@ -21,11 +21,20 @@
     <head>
         <script>
 
+            var compteur = 0;
+            document.querySelector('.munition').addEventListener('click', event => {
+                const cercle = event.target;
+                cercle.style.backgroundColor = 'red';
+})
             
+
             function lancer(){
                       alert("le barillet tourne");
             }
+            
+            function changer(){
 
+            }
 
 
             </script>
